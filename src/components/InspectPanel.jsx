@@ -28,7 +28,16 @@ export default function InspectPanel({ activeTab, setActiveTab, closeInspectPane
         </button>
       </div>
 
-      {activeTab === "code" ? <CodeDiffViewer codeLines={codeLines} /> : <div className="p-4"> {/* Screenshot Content */} </div>}
+      {activeTab === "code" ? (
+        <CodeDiffViewer codeLines={codeLines} />
+      ) : (
+        <div className="p-4 grid grid-cols-3 gap-2">
+          {/* Screenshot Content */}
+          <img src="src/assets/codediff1.svg" alt="Screenshot 1" className="rounded" />
+          <img src="src/assets/codediff2.svg" alt="Screenshot 2" className="rounded" />
+          
+        </div>
+      )}
     </div>
   );
 }

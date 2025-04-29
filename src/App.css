@@ -1,1 +1,42 @@
 @import "tailwindcss";
+:root {
+    --background-bg-background: #F9FAFB;
+    --background-bg-secondary: #E5E7EB;
+    --background-bg-primary: #3B82F6;
+  
+    --text-text-foreground: #111827;
+    --text-text-muted-foreground: #6B7280;
+    --text-text-primary: #1F2937;
+    --text-text-primary-foreground: #FFFFFF;
+    --text-text-secondary-foreground: #9CA3AF;
+  
+    --border-border-border: #D1D5DB;
+  }
+  
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  @keyframes glitter {
+    0% {
+      filter: brightness(1);
+    }
+    25% {
+      filter: brightness(1.5);
+    }
+    50% {
+      filter: brightness(2);
+    }
+    75% {
+      filter: brightness(1.5);
+    }
+    100% {
+      filter: brightness(1);
+    }
+  }
+  
+  .glitter {
+    animation: glitter 1s infinite;
+  }
+  

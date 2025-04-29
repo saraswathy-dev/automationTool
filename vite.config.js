@@ -5,4 +5,14 @@ import tailwindcss from "@tailwindcss/vite";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
+  server: {
+    port: 5000,
+    proxy: {
+      '/ai': {
+        target: 'http://ai_execute.sap.dpschool.app',
+        changeOrigin: true,
+        rewrite: path => path.replace(/^\/ai/, '')
+      }
+    }
+  }
 });
